@@ -33,7 +33,7 @@ const OnboardingPage = () => {
     }
   };
   return (
-    <div className='w-full inset-0'>
+    <div className='w-full px-5 inset-0'>
       <UserInfoProvider>{renderStep()}</UserInfoProvider>
     </div>
   );

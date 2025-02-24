@@ -31,7 +31,7 @@ const NameStep = ({
   };
 
   return (
-    <div className='w-full px-5 inset-0'>
+    <div className="w-full inset-0">
       <PageTitle onGoBack={onBack} title="성함을 입력해주세요" />
       <InputLayout title="이름">
         <InputField
@@ -41,7 +41,6 @@ const NameStep = ({
           textLimit={10}
         />
       </InputLayout>
-
       <BottomButtonPanel>
         <Button
           type={isValid ? buttonTypeKeys.ACTIVE : buttonTypeKeys.DISABLED}
