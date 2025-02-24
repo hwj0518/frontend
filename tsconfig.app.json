@@ -20,10 +20,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": "@/",
+    "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["node"]
   },
-  "include": ["src"]
+  "include": ["src", "svg.d.ts"]
 }
