@@ -1,5 +1,26 @@
 @import 'tailwindcss';
-@import 'tailwindcss/preflight';
+
+@font-face {
+  font-family: 'Pretendard Variable';
+  src: url('/src/assets/fonts/PretendardVariable.woff2') format('woff2'),
+    url('/src/assets/fonts/PretendardVariable.ttf') format('truetype');
+  font-display: 'fallback';
+}
+
+@theme {
+  --color-text-primary: #222222;
+  --color-text-secondary: #5f5f5f;
+  --color-text-placeholder: #a9a9a9;
+  --color-border-chip: #e3e3e3;
+  --color-border-line: #ededed;
+  --color-button-abled: #0b0b0b;
+  --color-button-disabled: #a9a9a9;
+  --color-background-card: #ffffff;
+  --color-background-screen: #f1f3fa;
+  --color-background-field: #f8f9fc;
+  --color-dropdown: #f8f8f8;
+  --color-input: #2e7cf6;
+}
 
 :root {
   display: flex;
@@ -11,6 +32,75 @@ body {
   display: flex;
   max-width: 375px;
   min-height: 100vh;
+  font-family: 'Pretendard Variable', Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-synthesis: none;
+}
+
+@layer components {
+  /* Heading Styles */
+  .head-h1 {
+    @apply text-[22px] leading-[140%] font-semibold;
+  }
+  .head-h2 {
+    @apply text-[20px] leading-[140%] font-semibold;
+  }
+
+  /* Subtitle 1 Styles */
+  .subtle1-medium {
+    @apply text-[18px] leading-[150%] font-medium;
+  }
+  .subtle1-regular {
+    @apply text-[18px] leading-[150%] font-normal;
+  }
+
+  /* Subtitle 2 Styles */
+  .subtle2-bold {
+    @apply text-[16px] leading-[150%] font-bold;
+  }
+  .subtle2-semibold {
+    @apply text-[16px] leading-[150%] font-semibold;
+  }
+  .subtle2-medium {
+    @apply text-[16px] leading-[150%] font-medium;
+  }
+  .subtle2-regular {
+    @apply text-[16px] leading-[150%] font-normal;
+  }
+
+  /* Body 1 Styles */
+  .body1-medium {
+    @apply text-[15px] leading-[150%] font-medium;
+  }
+  .body1-regular {
+    @apply text-[15px] leading-[150%] font-normal;
+  }
+
+  /* Body 2 Styles */
+  .body2-medium {
+    @apply text-[14px] leading-[150%] font-medium;
+  }
+  .body2-regular {
+    @apply text-[14px] leading-[150%] font-normal;
+  }
+
+  /* Body 3 Styles */
+  .body3-medium {
+    @apply text-[13px] leading-[150%] font-medium;
+  }
+  .body3-regular {
+    @apply text-[13px] leading-[150%] font-normal;
+  }
+
+  /* Body 4 Styles */
+  .body4-medium {
+    @apply text-[12px] leading-[150%] font-medium;
+  }
+  .body4-regular {
+    @apply text-[12px] leading-[150%] font-normal;
+  }
 }
 
 @media (prefers-color-scheme: light) {
