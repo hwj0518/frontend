@@ -9,7 +9,7 @@ type PageTitleProps = {
 const PageTitle = ({ onGoBack, title, subTitle }: PageTitleProps) => {
   return (
     <>
-      <header className="w-full pt-3">
+      <header className="w-full pt-3 sticky top-0 bg-white">
         <div className="w-5 h-5" onClick={onGoBack}>
           <BackIcon />
         </div>
