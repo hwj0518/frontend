@@ -10,16 +10,18 @@ type DropDownProps = {
   setValue: (value: string) => void; // 선택된 값을 설정하는 함수
 };
 
+type DropdownModalProps = {
+  options: string[]; // 드롭다운 선택지 목록
+  value: string | null; // 최종 선택 값
+  onSelect: (option: string) => void; // 옵션 선택 핸들러
+};
+
 // DropdownModal 컴포넌트: 드롭다운 옵션을 표시하는 모달
 export const DropdownModal = ({
   options,
   value,
   onSelect,
-}: {
-  options: string[];
-  value: string | null;
-  onSelect: (option: string) => void;
-}) => {
+}: DropdownModalProps) => {
   return (
     <div className="w-full relative shadow-[0px_4px_12px_rgba(0,0,0,0.1)] rounded-lg bg-white border border-border-line flex flex-row items-start justify-start p-2 text-left body-2 text-text-primary z-10">
       <div className="flex-1 flex flex-col items-start justify-start gap-[5px]">

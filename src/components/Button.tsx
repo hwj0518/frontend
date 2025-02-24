@@ -1,13 +1,15 @@
-import LinkIcon from '@/assets/icons/link-angled.svg?react';
+import React from 'react';
 import { buttonTypeKeys } from '@/constants/common';
 
 type buttonProps = {
   type: buttonTypeKeys; // 정의된 버튼을 3가지 타입으로 나누었습니다.
   title?: string; // 버튼에 포함되는 글자 (optional)
   onClick?: () => void; // 클릭 이벤트 핸들러 (optional)
+  icon?: React.FC<React.SVGProps<SVGSVGElement>>; // 아이콘 커스텀
 };
 
-const Button = ({ type, title, onClick }: buttonProps) => {
+// BottomButtonPanel 내부에서 사용
+const Button = ({ type, title, onClick, icon }: buttonProps) => {
   const getButtonStyle = () => {
     switch (type) {
       case buttonTypeKeys.ACTIVE:
@@ -26,7 +28,7 @@ const Button = ({ type, title, onClick }: buttonProps) => {
         className={`${getButtonStyle()} flex items-center justify-center gap-2 w-full h-12 subtle2-semibold rounded-lg`}
         onClick={onClick}
       >
-        {type === buttonTypeKeys.LINK && <LinkIcon />}
+        {icon && React.createElement(icon)}
         {title}
       </button>
     </>

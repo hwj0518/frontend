@@ -29,6 +29,7 @@ const inputStyler = (status: InputStatus) => {
   }
 };
 
+// InputLayout 내부에서 사용
 const InputField = ({
   placeholder,
   onChange,
@@ -81,6 +82,7 @@ const InputField = ({
           currentStatus,
         )} bg-white py-3 pl-4 pr-[14px]`}
       >
+        {/* text field */}
         {isTextArea ? (
           <textarea
             className="w-full h-40 outline-none placeholder:text-[var(--input-color)]"
@@ -92,6 +94,7 @@ const InputField = ({
             {value}
           </textarea>
         ) : (
+          // input field
           <input
             placeholder={placeholder}
             value={value ?? ''}
@@ -105,6 +108,7 @@ const InputField = ({
           />
         )}
       </div>
+      {/* text/input field 하단 경고 문구와 글자 수 측정기 */}
       <div className="flex justify-between mt-2">
         {!!textLimit && (
           <>
