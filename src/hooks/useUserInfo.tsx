@@ -1,12 +1,12 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
 
-enum JobCategory {
+export enum JobCategory {
   DEVELOPER = '개발',
   DESIGNER = '디자이너',
   MARKETER = '기획',
 }
 
-enum JobPosition {
+export enum JobPosition {
   FRONTEND = '프론트엔드',
   BACKEND = '백엔드',
   FULLSTACK = '풀스택',
