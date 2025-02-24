@@ -16,6 +16,7 @@ type InputProps = {
   onBlur?: () => void; // 입력 필드에서 포커스가 빠져나갈 때 호출될 함수 (선택적)
   clearInvalid?: () => void; // 토글 시 invalid 상태를 해제할 함수 (선택적)
   onDelete?: () => void; // 삭제 버튼 클릭 시 호출될 함수 (선택적)
+  isTextArea?: boolean; // textarea 여부(선택)
 };
 
 // inputStyler 함수: 입력 필드의 상태에 따른 스타일을 반환합니다.
@@ -35,6 +36,7 @@ const InputField = ({
   onBlur,
   clearInvalid,
   value,
+  isTextArea,
 }: InputProps) => {
   // 현재 입력 필드의 상태를 관리합니다.
   const [currentStatus, setCurrentStatus] = useState<InputStatus>(
@@ -43,7 +45,9 @@ const InputField = ({
   const [isInvalid, setIsInvalid] = useState(false);
 
   // 입력값 변경 핸들러
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     onChange(e.target.value);
     if (!!textLimit && e.target.value.length > textLimit) {
       setIsInvalid(true);
@@ -77,17 +81,29 @@ const InputField = ({
           currentStatus,
         )} bg-white py-3 pl-4 pr-[14px]`}
       >
-        <input
-          placeholder={placeholder}
-          value={value ?? ''}
-          className={
-            'w-full outline-none placeholder:text-[var(--input-color)]'
-          }
-          onClick={() => handleFocus('click')}
-          onBlur={handleBlur}
-          onChange={handleInputChange}
-          type={'text'}
-        />
+        {isTextArea ? (
+          <textarea
+            className="w-full h-40 outline-none placeholder:text-[var(--input-color)]"
+            placeholder={placeholder}
+            onClick={() => handleFocus('click')}
+            onBlur={handleBlur}
+            onChange={handleInputChange}
+          >
+            {value}
+          </textarea>
+        ) : (
+          <input
+            placeholder={placeholder}
+            value={value ?? ''}
+            className={
+              'w-full outline-none placeholder:text-[var(--input-color)]'
+            }
+            onClick={() => handleFocus('click')}
+            onBlur={handleBlur}
+            onChange={handleInputChange}
+            type={'text'}
+          />
+        )}
       </div>
       <div className="flex justify-between mt-2">
         {!!textLimit && (
