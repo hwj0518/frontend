@@ -1,19 +1,11 @@
 import LinkIcon from '@/assets/icons/link-angled.svg?react';
+import { buttonTypeKeys } from '@/constants/common';
 
 type buttonProps = {
-  type: buttonTypeUnion; // 정의된 버튼을 3가지 타입으로 나누었습니다.
+  type: buttonTypeKeys; // 정의된 버튼을 3가지 타입으로 나누었습니다.
   title?: string; // 버튼에 포함되는 글자 (optional)
   onClick?: () => void; // 클릭 이벤트 핸들러 (optional)
 };
-
-export const buttonTypeKeys = {
-  ACTIVE: 'active',
-  DISABLED: 'disabled',
-  LINK: 'link',
-};
-
-export type buttonTypeUnion =
-  (typeof buttonTypeKeys)[keyof typeof buttonTypeKeys];
 
 const Button = ({ type, title, onClick }: buttonProps) => {
   const getButtonStyle = () => {
