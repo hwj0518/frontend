@@ -13,10 +13,10 @@ export enum JobPosition {
   // TODO: 직무 채워넣기
 }
 
-interface Experience {
+export interface Experience {
   // PDF 파일인 경우
-  file?: File;
-
+  file: File | null;
+  link: string;
   // 직접 작성한 경우
   content?: {
     description: string;
