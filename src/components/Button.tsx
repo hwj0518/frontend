@@ -1,11 +1,11 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import { buttonTypeKeys } from '@/constants/common';
 
 type buttonProps = {
   type: buttonTypeKeys; // 정의된 버튼을 3가지 타입으로 나누었습니다.
   title?: string; // 버튼에 포함되는 글자 (optional)
   onClick?: () => void; // 클릭 이벤트 핸들러 (optional)
-  icon?: React.ReactNode; // 아이콘 커스텀
+  icon?: ReactNode; // 아이콘 커스텀
 };
 
 // BottomButtonPanel 내부에서 사용
