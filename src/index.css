@@ -39,7 +39,7 @@ body {
   position: relative;
   width: 100%;
   display: flex;
-  max-width: 375px;
+  max-width: 450px;
   min-height: 100vh;
   background: #ffffff;
   font-synthesis: none;
