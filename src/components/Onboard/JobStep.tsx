@@ -53,7 +53,7 @@ const JobStep = ({
       <InputLayout title="직무 선택">
         <Dropdown
           value={userInfo.jobPosition}
-          placeholder="직종을 선택해 주세요"
+          placeholder="직무를 선택해 주세요"
           options={jobCategory}
           setValue={(value) =>
             updateUserInfo('jobPosition', value as JobPosition)
