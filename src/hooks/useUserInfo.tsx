@@ -1,4 +1,4 @@
-import { createContext, FC, ReactNode, useContext, useState } from 'react';
+import { createContext, ReactNode, useContext, useState } from 'react';
 
 export enum JobCategory {
   DEVELOPER = '개발',
@@ -58,7 +58,7 @@ const UserInfoContext = createContext<UserInfoContextType>({
 });
 
 // Provider 컴포넌트
-export const UserInfoProvider = (children: ReactNode) => {
+export const UserInfoProvider = ({ children }: { children: ReactNode }) => {
   const [userInfo, setUserInfo] = useState<UserInfo>(initialUserInfo);
 
   const updateUserInfo = <K extends keyof UserInfo>(
