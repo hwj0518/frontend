@@ -1,20 +1,19 @@
 import { buttonTypeKeys } from '@/constants/common';
-import BottomButtonPanel from '../BottomButtonPanel';
-import Button from '../Button';
+import BottomButtonPanel from '@/components/BottomButtonPanel';
+import Button from '@/components/Button';
 import { useUserInfo } from '@/hooks/useUserInfo';
 import { useEffect, useState } from 'react';
-import PageTitle from '../PageTitle';
-import InputLayout from '../InputLayout';
-import InputField from '../InputField';
+import PageTitle from '@/components/PageTitle';
+import InputLayout from '@/components/InputLayout';
+import InputField from '@/components/InputField';
 
-// 이름 입력 단계 컴포넌트
-const NameStep = ({
-  onBack,
-  onNext,
-}: {
+type NameStepProps = {
   onBack: () => void;
   onNext: () => void;
-}) => {
+};
+
+// 이름 입력 단계 컴포넌트
+const NameStep = ({ onBack, onNext }: NameStepProps) => {
   const { userInfo, updateUserInfo } = useUserInfo();
   const [isValid, setIsValid] = useState(false);
 

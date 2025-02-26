@@ -58,7 +58,7 @@ const UserInfoContext = createContext<UserInfoContextType>({
 });
 
 // Provider 컴포넌트
-export const UserInfoProvider: FC<{ children: ReactNode }> = ({ children }) => {
+export const UserInfoProvider = (children: ReactNode) => {
   const [userInfo, setUserInfo] = useState<UserInfo>(initialUserInfo);
 
   const updateUserInfo = <K extends keyof UserInfo>(

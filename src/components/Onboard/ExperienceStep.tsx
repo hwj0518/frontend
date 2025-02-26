@@ -5,13 +5,12 @@ import { useState } from 'react';
 import PageTitle from '@/components/PageTitle';
 import UploadIcon from '@/assets/icons/icon_share.svg?react';
 
-const ExperienceStep = ({
-  onBack,
-  onNext,
-}: {
+type ExperienceStepProps = {
   onBack: () => void;
   onNext: (option: string) => void;
-}) => {
+};
+
+const ExperienceStep = ({ onBack, onNext }: ExperienceStepProps) => {
   const [experienceType, setExperienceType] = useState<string | null>(null);
   const isValid = experienceType !== null;
 

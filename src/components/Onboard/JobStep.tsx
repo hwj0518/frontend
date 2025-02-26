@@ -7,13 +7,12 @@ import PageTitle from '../PageTitle';
 import InputLayout from '../InputLayout';
 import Dropdown from '../Dropdown';
 
-const JobStep = ({
-  onBack,
-  onNext,
-}: {
+type JobStepProps = {
   onBack: () => void;
   onNext: () => void;
-}) => {
+};
+
+const JobStep = ({ onBack, onNext }: JobStepProps) => {
   const { userInfo, updateUserInfo } = useUserInfo();
   const [isValid, setIsValid] = useState(false);
   const jobCategory = [

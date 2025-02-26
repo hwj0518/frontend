@@ -13,13 +13,12 @@ const enum ExpType {
   LINK = 'link',
 }
 
-const LinkStep = ({
-  onBack,
-  onNext,
-}: {
+type LinkStepProps = {
   onBack: () => void;
   onNext: () => void;
-}) => {
+};
+
+const LinkStep = ({ onBack, onNext }: LinkStepProps) => {
   const { updateUserInfo } = useUserInfo();
   const [experienceType, setExperienceType] = useState<ExpType>(ExpType.FILE);
   const [experience, setExperience] = useState<Experience>({
